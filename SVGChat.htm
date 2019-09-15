@@ -1,0 +1,90 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>矢量图形聊天室</title>
+</head>
+
+<body>
+
+<h1 align="center"><b>矢量图形聊天室</b></h1>
+<p>　</p>
+<p>&nbsp;&nbsp;&nbsp; 这个Java项目的名称叫做&quot;SVG Chat&quot;，从构架上来说是一个基于C/S模式的聊天室，但与众不同的是她在网络间传送的图形对象是基于XML规范的SVG（可变换矢量图形）。因此，除了提供了一个多用户多线程的网络构架外，该系统可以生成标准的SVG文档，并利用SAX对XML文档进行解析。由于Java2D的强大功能，作者感到在图形的绘制方面非常方便。</p>  
+<p>&nbsp;&nbsp;&nbsp;   
+以下是该系统的客户端的运行界面，作者将以此图为范例为大家作一些必要的说明：</p>  
+<p align="center"><img border="0" src="svgchat.jpg" width="710" height="579"></p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+在本系统的使用中，基本上不用菜单即可完成所有功能。而所有的工具条按钮都会显示功能提示。作为Flash的可能终结者，SVG提供了强大的矢量图形绘制，操作功能，并支持声音，动画，以及事件的响应。但由于本系统的设计目标仅为计算机图形学互动教学系统，且作者个人能力有限，只能识别出系统本身生成的SVG文档，但所生成SVG文档能在任何标准的SVG游览器中使用。本系统将出现在“华中理工大学”（现在改名为“华中科技大学”）陆枫老师即将出版的《图形学》教材附带光盘中。</p>  
+<h2 align="left">一、操作说明</h2>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 1.图形绘制</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+纵向的一列工具条按钮中，从第二个开始分别为画“直线”，“矩形”，“圆角矩形”，“椭圆”，“弧”，“立方体曲体”和“文字”。注意系统使用了锁定模式，一旦选择了上述按钮中的一个，将一直有效，直到重新点选其他绘图按钮或选择纵向工具条中第一个“Select”进入已绘制图形的操作模式。在此模试下不会绘制任何图形，而只会根据鼠标的位置及层次进行图形的选择，对于选中的图形会出现控制点，可点住进行拖动，改变图形的形态；若在控制点外拖动鼠标则会对图形的位置进行改变。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+在绘制图形的过程中，除了“文字”只需要点一下鼠标外，其他矢量图形都需要按住并拖动鼠标以产生图形。注意一旦绘制完一个图形后要对其进行形体或位置上的改变，应立即选择“Select”按钮，否则点下鼠标会绘制出新的图形。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+对于“圆角矩形”的两个圆角度，“文字”的字体与内容，还有弧的起始角与弧度都应在绘制完成后，在客户程序下端的“控制区”中点击“Activate”按钮，然后在对话框中设置。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 2.色彩的选定</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+在绘制任何图形之前，用户可预设想用的颜色，使用“Color”菜单或纵向工具条中的“调色板”按钮可以进行相关设定，否则默认为黑色。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+在图形绘制完成之后，如要进行色彩的变更，应点击“控制区”中的“Draw   
+Color”按钮。如要对图形进行填充，就选中“控制区”中的“Filling”复选框，默认为白色，如要进行改变，请点击“控制区”中的“Fill   
+Color”按钮。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 3.选中已绘制图形</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+由于在各个已绘制图形中是一个层次的关系，故使用纵向工具条中的“Select”（第一个按钮）有时选择不到置于其他图形下层的图形，在这种情况下，应该使用“控制区”中的“Shapes”下拉列表进行对应图形的选择。然后点击纵向工具条中的倒数第五个按钮（“Move”功能），再到绘图区拖动鼠标，将被覆盖图形拖出被覆盖区域再进行相关操作，最后再移回原位。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 4.删除已绘制图形</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+对于已经绘制完成的图形，如不满意，可先选中该图形，然后再点击纵向工具条中的最后一个按钮，即可将其删除。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 5.旋转，放大，缩小及线宽</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+纵向工具条中的倒数第二，第三，第四个按钮实现了对选中图形的相关操作。放大与缩小只需要点击按钮即可对选中图形进行10%的缩放操作，而旋转的角度就在“控制区”中的“Angle”中输入。而所绘制图形的线宽则应在“控制区”中的“Width”中输入。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 6.网络操作</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+如果要与其他用户联系，应在网络中的一台电脑上运行SVGChatServer。在确认已经开启了服务器后，点击横向工具条上的左起第一个按钮会弹出对话框，要求输入服务器地址，端口号，以及用户名，注意如果所输入的用户名已经被其他用户占用，系统会请求输入新的用户名。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+如果要断开网络，可以点击横向工具条上的左起第二个按钮，或关闭客户端应用程序。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+如果只发送文字给其他所有用户，在“Here's my words:”文本框中输入文字后回车或点击“控制区”中的“Send   
+text”按钮即可；如还要传送当前画板，请点击“Send text &amp;   
+SVG”按钮。注意，这两个按钮的使用都要求文本框中非空。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 7.画板及文件操作</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+在应用运行中，如想开启一个新的画板，可以点击横向工具条上的左起第三个按钮，被网络用户传过来的画板以及新建的画板会被置为当前画板，如要选择以前的画板，请使用“控制区”中的“SVGs”下拉列表进行对应画板的选择。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp; 如要保存当前画板为SVG文件，请点击横向工具条上的左起第五个按钮，在文件对话框中输入文件名即可，注意使用&quot;.svg&quot;为文件名后缀。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp; 如要载入以前保存的SVG文件，请点击横向工具条上的左起第四个按钮，在文件对话框中选择文件名即可。我在应用包中已经附带了两个SVG文件，大家可以载入试一试。</p> 
+<p align="left">&nbsp;&nbsp;&nbsp; <a href="girl.svg">girl.svg</a>和<a href="all.svg">all.svg</a></p> 
+<p align="left">　</p> 
+<h2 align="left">二、问题说明</h2> 
+<h3 align="left">&nbsp;&nbsp;&nbsp; 1.弧形色彩</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp; 由于SVG标准的弧形参数与Java 2D中所用到的不同，故作者在实现时遇到困难，使用了替代法解决了问题，但问题是其色彩参数被占用导致色彩失真。我会在网上提供程序的全部源代码，希望有人能解决这个问题。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 2.用户列表</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp; “控制区”中的“Users”下拉列表中应在有新用户加入时更新，但ArrayList在通过网络对象传输后被定了形，也就是说始终只能显示第一次加入的用户列表。是Java自动优化的结果？还是其他什么原因？希望有人能解答。</p>  
+<h3 align="left">&nbsp;&nbsp;&nbsp; 3.其他问题</h3>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+作为一个计算机图形学互动教学系统，本系统的功能也许够了，但还需要众多的检验，希望有条件的朋友能够将其运用到实践中去，只有这样，才会提出新的建议，不断改良。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp; 如要在IE中浏览SVG矢量图形文件，请安装SVGView3的IE插件，可以在Adobe的公司网页上下载。在IE中打开后，图形可能显示在左下角，并可能超出屏幕范围，请将IE窗口最大化，并用右键控制放大和缩小，祝大家好运。</p> 
+<p align="left">&nbsp;&nbsp;&nbsp; 运行方法：</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.将<a href="SVGChat_Release_20020329.zip">SVGChat_Release_20020329.zip</a>解压到一个目录下。<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.运行客户端：start java -jar   
+SVGChatClient.jar<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.运行服务器端：start java   
+-jar SVGChatServer.jar</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+注：如果愿意，可以建两个批处理文件，双击即可；或安装J2RE1.3.1以上版本即可。JDK就不   
+用我提醒各位安装了吧。</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;   
+希望大家能对本系统向我提出建议，非常感谢！</p>  
+<p align="left">作者：沙晋</p>  
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:savorjava@yahoo.com.cn">savorjava@yahoo.com.cn</a></p>  
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 应用包<a href="SVGChat_Release_20020329.zip">（下载）</a></p>  
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 源代码<a href="Source.zip">（下载）</a></p>  
+<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2002.3.29 - 深圳</p> 
+<p align="left">　</p> 
+ 
+</body> 
+ 
+</html> 
